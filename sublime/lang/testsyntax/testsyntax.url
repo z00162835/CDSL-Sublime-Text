@@ -1,0 +1,175 @@
+//This a url syntax test file;
+/*This a comments test //
+*/
+//This a commests test
+
+//This a package test
+package opm.action;
+package huawei.cbs.test;
+
+//This a import test
+import huawei.com.cbs.cotest;
+import huawei.com.bes.test;
+
+package huawei;
+
+
+
+//This a root class test
+root class RootObject
+{
+	//This a storage type test
+	String name;
+	String name;
+	Int id;
+	Boolean isTrue;
+	Float payid;
+	Long uuid;
+	Double rsaid;
+	Number numberid;
+	//This a inner class test
+	class innerObject
+    {
+		String name;
+		Int id;
+	}
+
+	class innerNameObject, namerequired
+	{
+		String name;
+		Int id;
+	}
+
+	class a 
+	{
+
+	}
+
+	root class a 
+	{
+
+	}
+
+	class a 
+	{
+		
+	}
+
+	class bes 
+	{
+
+	}
+	{
+		enum Int aaa
+
+	}
+}
+
+//This a root class name test
+root class RootObjectName, namerequired
+{
+    //This a storage type test
+	String name;
+	Int id;
+	Boolean isTrue;
+	Float payid;
+	Long uuid;
+	Double rsaid;
+	Number numberid;
+	//This a inner class test
+	class innerObject
+	{
+		String name;
+		Int id;
+	}
+
+	class innerNameObject
+	{
+		String name;
+		Int id;
+	}
+	enum String aaa
+	{
+
+	}
+}
+
+//This a class test
+class Object
+{
+	//This a storage type test
+	String name;
+	Int id;
+	Boolean isTrue;
+	Float payid;
+	Long uuid;
+	Double rsaid;
+	Number numberid;
+	//This a inner class test
+	class innerObject
+	{
+		String name;
+		Int id;
+	}
+
+	class aaa
+	{
+
+	}
+    enum Int aaa 
+    {
+      STRING = 1;
+
+    }
+    String "name";
+    
+}
+
+//This a class name test
+class Object, namerequired
+{
+	class Int aaa
+	{
+
+	}
+}
+
+//This a enum test
+enum Int aaa 
+{
+	String
+    String int = 1;
+    String a = 1;
+    STRING = 1;
+    class
+    class aaa {
+
+    }
+    //
+    
+    String
+    root class aaa {
+
+    }
+
+    
+}
+
+
+Attribute testattr
+{
+	String name;
+	Int id;
+}
+
+Attribute testattr, namerequired
+{
+	String name;
+	Int id;
+}
+
+
+class testclass extends Object
+{
+	String name;
+}

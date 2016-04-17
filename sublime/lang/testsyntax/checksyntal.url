@@ -1,0 +1,64 @@
+//
+enum Int aaa 
+{
+    INT = 1;
+}
+
+root class test, namerequired 
+{
+	class aaa 
+	{
+
+	}
+	root class aaa 
+	{
+
+	}
+}
+
+root class test extends String {
+
+}
+
+test 
+{
+
+}
+
+class test extends String {}
+{
+
+}
+{
+	class test
+	{
+		String id, required;
+
+
+	}
+	String Int = 1;
+	enum Int aaa
+	true
+	root class test1 {
+	}
+	test 
+	{
+
+	}
+}
+String aaa, required;
+String bbb;
+test aaa 
+{
+
+}
+
+class String32 extends String
+{
+
+}
+
+test
+(String|Int|Long|Float|Double|Boolean|Number)\s*([A-Za-z][A-Za-z0-9_])?(,\s*required))?
+String foo, required;
+Int foo, required;

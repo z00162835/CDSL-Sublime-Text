@@ -1,0 +1,114 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: url
+scopeName: source.url
+fileTypes: [url]
+uuid: 65008556-31ff-426c-838a-6b7e79e4cc31
+
+patterns:
+  - include: '#comments'
+  - include: '#constants'
+  - include: '#storagetypes'
+  - include: '#strings'
+  - include: '#enum'
+  - include: '#packaging'
+  - include: '#rootclass'
+  - include: '#class'
+  #- include: '#anonymousclass'
+
+repository:
+  comments:
+    patterns:
+    - name: comment.block.url
+      begin: /\*
+      end: \*/
+    - name: comment.line.double-slash.url
+      begin: //
+      end: $\n?
+
+  constants:
+    name: constant.language.url
+    match: \b(true|false|null)\b
+
+  storagetypes:
+    #name: storage.type.url
+    #match: \b(String|Int|Long|Float|Double|Boolean|Number)\b
+    match: (String|Int|Long|Float|Double|Boolean|Number)\b\s+([A-Za-z][A-Za-z0-9_]*)?(,\s+required;)?
+    captures:
+        '1': {name: storage.type.url}
+        '3': {name: keyword.source.url}
+
+
+  enum:
+    begin: (enum)\s*(Int|String)\s*([A-Za-z][A-Za-z0-9_]*)\s+(\{)?
+    beginCaptures:
+      '1': {name: keyword.source.url}
+      '2': {name: storage.type.url}
+      '3': {name: entity.name.class.enum.url}
+    end: \}
+    patterns:
+    - include: '#comments'
+    - name: keyword.source.url
+    - match: ([A-Za-z][A-Za-z0-9_]\S+)(\s+)(=)(\s+)(["]?[A-Za-z0-9]["]?)(;)
+      captures:
+        '1': {name: constant.other.url}
+        '5': {name: constant.numeric.url}
+
+  packaging:
+    match: (package|import)((\s+)([A-Za-z][A-Za-z0-9-_.]*)(;))
+    captures:
+      '1': {name: keyword.source.url}
+      '2': {name: storage.type.url}
+  
+  rootclass:
+    begin: (root)\s+(class)\s+([A-Za-z][A-Za-z0-9-_]*)(,\s+namerequired)?\s+(extends\s+)?([A-Za-z][A-Za-z0-9-_]*)?(\{)?
+    beginCaptures:
+      '1': {name: keyword.source.url}
+      '2': {name: keyword.source.url}
+      '3': {name: entity.name.class.rootclass.url}
+      '4': {name: keyword.source.url}
+      '5': {name: keyword.source.url}
+    end: \}
+    patterns:
+    - include: '#comments'
+    - include: '#constants'
+    - include: '#storagetypes'
+    - include: '#enum'
+    - include: '#class'
+    
+  class:
+    begin: (class)\s+([A-Za-z][A-Za-z0-9-_]*)(,\s+namerequired)?\s+(extends\s+)?([A-Za-z][A-Za-z0-9-_]*)?(\{)?
+    beginCaptures:
+      '1': {name: keyword.source.url}
+      '2': {name: entity.name.class.metaclass.url}
+      '3': {name: keyword.source.url}
+      '4': {name: keyword.source.url}
+      '5': {name: entity.name.class.supperclass.url}
+
+    end: \}
+    patterns:
+    - include: $self
+    - include: '#comments'
+    - include: '#constants'
+    - include: '#storagetypes'
+    - include: '#enum'
+    - include: '#anonymousclass'
+  
+  anonymousclass:
+    begin: ([A-Za-z][A-Za-z0-9-_])(,\s+required)?\s+(\{)?
+    beginCaptures:
+      '1': {name: entity.name.class.url}
+      '2': {name: keyword.source.url}
+
+    end: \}
+    patterns:
+    - include: $self
+    - include: '#comments'
+    - include: '#constants'
+    - include: '#storagetypes'
+    - include: '#enum'
+
+  strings:
+    name: string.quoted.double.proto
+    begin: '"'
+    end: '"'
