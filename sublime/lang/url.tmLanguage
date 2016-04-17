@@ -32,10 +32,6 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#strings</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#enum</string>
 		</dict>
 		<dict>
@@ -49,6 +45,14 @@
 		<dict>
 			<key>include</key>
 			<string>#class</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#strings</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#scriptblock</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -293,6 +297,15 @@
 					<string>#class</string>
 				</dict>
 			</array>
+		</dict>
+		<key>scriptblock</key>
+		<dict>
+			<key>begin</key>
+			<string>&lt;&lt;&lt;</string>
+			<key>end</key>
+			<string>&gt;&gt;&gt;</string>
+			<key>name</key>
+			<string>string.quoted.double.proto</string>
 		</dict>
 		<key>storagetypes</key>
 		<dict>

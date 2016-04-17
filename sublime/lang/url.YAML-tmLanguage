@@ -11,11 +11,12 @@ patterns:
   - include: '#keywords'
   - include: '#annokeywords'
   - include: '#storagetypes'
-  - include: '#strings'
   - include: '#enum'
   - include: '#packaging'
   - include: '#rootclass'
   - include: '#class'
+  - include: '#strings'
+  - include: '#scriptblock'
 
 repository:
   comments:
@@ -108,3 +109,8 @@ repository:
     name: string.quoted.double.proto
     begin: '"'
     end: '"'
+
+  scriptblock:
+    name: string.quoted.double.proto
+    begin: '<<<'
+    end: '>>>'

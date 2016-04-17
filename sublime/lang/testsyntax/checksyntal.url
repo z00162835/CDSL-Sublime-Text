@@ -30,6 +30,10 @@ root class test extends aaa
 
 }
 @check()
+@cca()
+@model()
+<<<
+>>>
 class test extends String {}
 {
 
