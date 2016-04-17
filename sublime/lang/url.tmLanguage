@@ -20,6 +20,14 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#keywords</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#annokeywords</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#storagetypes</string>
 		</dict>
 		<dict>
@@ -45,48 +53,18 @@
 	</array>
 	<key>repository</key>
 	<dict>
-		<key>anonymousclass</key>
+		<key>annokeywords</key>
 		<dict>
-			<key>begin</key>
-			<string>([A-Za-z][A-Za-z0-9-_])(,\s+required)?\s+(\{)?</string>
-			<key>beginCaptures</key>
+			<key>captures</key>
 			<dict>
 				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.class.url</string>
-				</dict>
-				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>keyword.source.url</string>
 				</dict>
 			</dict>
-			<key>end</key>
-			<string>\}</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#comments</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#constants</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#storagetypes</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#enum</string>
-				</dict>
-			</array>
+			<key>match</key>
+			<string>(@check|@model|@tips|@ep|@ctx|@caa)(\(*)</string>
 		</dict>
 		<key>class</key>
 		<dict>
@@ -143,10 +121,6 @@
 				<dict>
 					<key>include</key>
 					<string>#enum</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#anonymousclass</string>
 				</dict>
 			</array>
 		</dict>
@@ -232,6 +206,13 @@
 				</dict>
 			</array>
 		</dict>
+		<key>keywords</key>
+		<dict>
+			<key>match</key>
+			<string>\b(script|if|else|for|in|when|while|return|break|context)\b</string>
+			<key>name</key>
+			<string>keyword.source.url</string>
+		</dict>
 		<key>packaging</key>
 		<dict>
 			<key>captures</key>
@@ -281,6 +262,11 @@
 					<key>name</key>
 					<string>keyword.source.url</string>
 				</dict>
+				<key>6</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.class.supperclass.url</string>
+				</dict>
 			</dict>
 			<key>end</key>
 			<string>\}</string>
@@ -305,10 +291,6 @@
 				<dict>
 					<key>include</key>
 					<string>#class</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#anonymousclass</string>
 				</dict>
 			</array>
 		</dict>

@@ -64,7 +64,7 @@ root class RootObject
 
 	}
 }
-
+@check
 //This a root class name test
 root class RootObjectName, namerequired
 {

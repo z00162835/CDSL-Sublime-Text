@@ -8,13 +8,14 @@ uuid: 65008556-31ff-426c-838a-6b7e79e4cc31
 patterns:
   - include: '#comments'
   - include: '#constants'
+  - include: '#keywords'
+  - include: '#annokeywords'
   - include: '#storagetypes'
   - include: '#strings'
   - include: '#enum'
   - include: '#packaging'
   - include: '#rootclass'
   - include: '#class'
-  #- include: '#anonymousclass'
 
 repository:
   comments:
@@ -29,6 +30,15 @@ repository:
   constants:
     name: constant.language.url
     match: \b(true|false|null)\b
+
+  keywords:
+    name: keyword.source.url
+    match: \b(script|if|else|for|in|when|while|return|break|context)\b
+
+  annokeywords:
+    match: (@check|@model|@tips|@ep|@ctx|@caa)(\(*)
+    captures:
+        '1': {name: keyword.source.url}
 
   storagetypes:
     #name: storage.type.url
@@ -68,6 +78,7 @@ repository:
       '3': {name: entity.name.class.rootclass.url}
       '4': {name: keyword.source.url}
       '5': {name: keyword.source.url}
+      '6': {name: entity.name.class.supperclass.url}
     end: \}
     patterns:
     - include: '#comments'
@@ -84,21 +95,6 @@ repository:
       '3': {name: keyword.source.url}
       '4': {name: keyword.source.url}
       '5': {name: entity.name.class.supperclass.url}
-
-    end: \}
-    patterns:
-    - include: $self
-    - include: '#comments'
-    - include: '#constants'
-    - include: '#storagetypes'
-    - include: '#enum'
-    - include: '#anonymousclass'
-  
-  anonymousclass:
-    begin: ([A-Za-z][A-Za-z0-9-_])(,\s+required)?\s+(\{)?
-    beginCaptures:
-      '1': {name: entity.name.class.url}
-      '2': {name: keyword.source.url}
 
     end: \}
     patterns:
