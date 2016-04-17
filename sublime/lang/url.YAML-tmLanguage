@@ -30,11 +30,11 @@ repository:
 
   constants:
     name: constant.language.url
-    match: \b(true|false|null)\b
+    match: \b(true|false|null|static|final)\b
 
   keywords:
     name: keyword.source.url
-    match: \b(script|if|else|for|in|when|while|return|break|context)\b
+    match: \b(script|crl|if|then|else|for|in|when|while|return|break|context)\b
 
   annokeywords:
     match: (@check|@model|@tips|@ep|@ctx|@caa)(\(*)
@@ -111,6 +111,7 @@ repository:
     end: '"'
 
   scriptblock:
-    name: string.quoted.double.proto
-    begin: '<<<'
-    end: '>>>'
+    match: (<<<|>>>)
+    captures:
+      '1': {name: keyword.source.url}
+

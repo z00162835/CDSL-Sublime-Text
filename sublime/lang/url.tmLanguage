@@ -153,7 +153,7 @@
 		<key>constants</key>
 		<dict>
 			<key>match</key>
-			<string>\b(true|false|null)\b</string>
+			<string>\b(true|false|null|static|final)\b</string>
 			<key>name</key>
 			<string>constant.language.url</string>
 		</dict>
@@ -213,7 +213,7 @@
 		<key>keywords</key>
 		<dict>
 			<key>match</key>
-			<string>\b(script|if|else|for|in|when|while|return|break|context)\b</string>
+			<string>\b(script|crl|if|then|else|for|in|when|while|return|break|context)\b</string>
 			<key>name</key>
 			<string>keyword.source.url</string>
 		</dict>
@@ -300,12 +300,16 @@
 		</dict>
 		<key>scriptblock</key>
 		<dict>
-			<key>begin</key>
-			<string>&lt;&lt;&lt;</string>
-			<key>end</key>
-			<string>&gt;&gt;&gt;</string>
-			<key>name</key>
-			<string>string.quoted.double.proto</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.source.url</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(&lt;&lt;&lt;|&gt;&gt;&gt;)</string>
 		</dict>
 		<key>storagetypes</key>
 		<dict>

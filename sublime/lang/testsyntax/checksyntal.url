@@ -1,4 +1,12 @@
 //
+//
+then
+
+ <<<      
+    then
+    else
+    static final i = 1;
+ >>>
 enum Int aaa 
 {
     INT = 1;
@@ -32,8 +40,8 @@ root class test extends aaa
 @check()
 @cca()
 @model()
-<<<
->>>
+<<< 111 >>>
+
 class test extends String {}
 {
 
